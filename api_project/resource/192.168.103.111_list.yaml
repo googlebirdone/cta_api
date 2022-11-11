@@ -1,0 +1,1087 @@
+- name: list
+  request:
+    body: ''
+    headers: {}
+    method: GET
+    params: ''
+    url: http://192.168.103.11:888/dwcta/study/list
+  response:
+    status: 200
+    text: ""
+- name: getUserIp
+  request:
+    body: ''
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: GET
+    params: _v=5.6.0
+    url: http://192.168.103.11:888/pacs/v2/dicom/getUserIp
+  response:
+    status: 200
+    text:
+      data:
+        ip: 192.168.115.59
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: getCtaConfig
+  request:
+    body:
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getCtaConfig
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: statistics
+  request:
+    body: ''
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: GET
+    params: _v=5.6.0
+    url: http://192.168.103.11:888/cta/image/statistics
+  response:
+    status: 200
+    text:
+      data:
+        allHandleTotal: 1688
+        allUnHandleTotal: 3
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: getUserIp
+  request:
+    body: ''
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: GET
+    params: _v=5.6.0
+    url: http://192.168.103.11:888/pacs/v2/dicom/getUserIp
+  response:
+    status: 200
+    text:
+      data:
+        ip: 192.168.115.59
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: getRoleColumns
+  request:
+    body:
+      _v: 5.6.0
+      ip: 192.168.115.59
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getRoleColumns
+  response:
+    status: 200
+    text:
+      data:
+        column:
+        - key: role
+          label: "\u89D2\u8272\u9009\u62E9"
+          option:
+          - key: technician
+            label: "\u91CD\u5EFA\u533B\u5E08"
+          - key: doctor
+            label: "\u8BCA\u65AD\u533B\u5E08"
+          type: radio
+        - key: technician
+          label: "\u91CD\u5EFA\u533B\u5E08"
+          option:
+          - key: taskType
+            label: "\u7B97\u6CD5\u7C7B\u578B"
+          - key: rebuildStatus
+            label: "\u91CD\u5EFA\u72B6\u6001"
+          - key: diagnosisStatus
+            label: "\u8BCA\u65AD\u72B6\u6001"
+          - key: printStatus
+            label: "\u6253\u5370\u72B6\u6001"
+          - key: pushStatus
+            label: "\u63A8\u9001\u72B6\u6001"
+          - key: reportStatus
+            label: "\u62A5\u544A\u590D\u5236\u72B6\u6001"
+          - key: operatorName
+            label: "\u64CD\u4F5C\u4EBA\u5458"
+          - key: aiEndTime
+            label: "\u8BA1\u7B97\u5B8C\u6210\u65F6\u95F4"
+          type: checkbox
+        - key: doctor
+          label: "\u8BCA\u65AD\u533B\u5E08"
+          option:
+          - key: taskType
+            label: "\u7B97\u6CD5\u7C7B\u578B"
+          - key: rebuildStatus
+            label: "\u91CD\u5EFA\u72B6\u6001"
+          - key: diagnosisStatus
+            label: "\u8BCA\u65AD\u72B6\u6001"
+          - key: printStatus
+            label: "\u6253\u5370\u72B6\u6001"
+          - key: pushStatus
+            label: "\u63A8\u9001\u72B6\u6001"
+          - key: reportStatus
+            label: "\u62A5\u544A\u590D\u5236\u72B6\u6001"
+          - key: operatorName
+            label: "\u64CD\u4F5C\u4EBA\u5458"
+          - key: aiEndTime
+            label: "\u8BA1\u7B97\u5B8C\u6210\u65F6\u95F4"
+          type: checkbox
+        roleData:
+          doctor:
+          - taskType
+          - rebuildStatus
+          - diagnosisStatus
+          - printStatus
+          - reportStatus
+          - operatorName
+          - aiEndTime
+          - pushStatus
+          role: technician
+          technician:
+          - taskType
+          - rebuildStatus
+          - diagnosisStatus
+          - printStatus
+          - reportStatus
+          - operatorName
+          - aiEndTime
+          - pushStatus
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_default_info
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: ["2022-11-03 00:00", "2022-11-03 23:59"]
+      taskType: ''
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_exist_accessnum
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: be18259
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: []
+      taskType: ""
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_not_exist_accessnumber
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: be18259sdadasda
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: []
+      taskType: ""
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_illegal_accessnumber
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo:
+        - 11111
+        - 22222
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: []
+      taskType: ""
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: 参数解析失败,请检查您的参数
+      ret: -10001
+- name: 列表查询_illegal_accessnumber
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: {"a":1}
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: []
+      taskType: ""
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: 参数解析失败,请检查您的参数
+      ret: -10001
+- name: 列表查询_exist_patientid
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: 1470587
+      rebuildStatus: ''
+      studyDateShotList: []
+      taskType: ""
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_not_exist_patientid
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: 1470587dadadddddd
+      rebuildStatus: ''
+      studyDateShotList: []
+      taskType: ""
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_illegal_patientid
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient:
+        - unknown
+      rebuildStatus: ''
+      studyDateShotList: []
+      taskType: ""
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: 参数解析失败,请检查您的参数
+      ret: -10001
+- name: 列表查询_illegal_patientid
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: {patient: Unknown}
+      rebuildStatus: ''
+      studyDateShotList: []
+      taskType: ""
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: 参数解析失败,请检查您的参数
+      ret: -10001
+- name: 列表查询_normal_tasktype
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: []
+      taskType: "Coronary_cta"
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_illegal_tasktype
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: []
+      taskType:
+        - Coronary_cta
+        - Cerebral_cta
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: 参数解析失败,请检查您的参数
+      ret: -10001
+- name: 列表查询_normal_status
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: 17
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: 12
+      studyDateShotList: []
+      taskType: "Coronary_cta"
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_illegal_status
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus:
+        - 17
+        - 18
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus:
+        - 12
+        - 13
+      studyDateShotList: []
+      taskType: "Coronary_cta"
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: 参数解析失败,请检查您的参数
+      ret: -10001
+- name: 列表查询_normal_datetime
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: ["2022-07-06 23:59","2022-07-07 23:59"]
+      taskType: "Coronary_cta"
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_null_datetime
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: null
+      taskType: "Coronary_cta"
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_half_datetime
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: ["","2022-07-07 23:59"]
+      taskType: "Coronary_cta"
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_half_datetime
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: ["2022-11-03 00:00", ""]
+      taskType: "Coronary_cta"
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_no_datetime
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: ["", ""]
+      taskType: "Coronary_cta"
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_error_datetime
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: ["2022-11-04 00:00", "2022-11-03 23:59"]
+      taskType: "Coronary_cta"
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_error_datetime
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: ["9999-99-99 00:00", ""]
+      taskType: "Coronary_cta"
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_error_datetime
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: ["1667457297", "1667543696"]
+      taskType: "Coronary_cta"
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 列表查询_illeagl_datetime
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      diagnosisStatus: ''
+      handle: 1
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList: {"starttime":"2022-11-03 00:00","endtime":"2022-11-03 23:59"}
+      taskType: "Coronary_cta"
+      total: 196
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: true
+        hasPrevious: false
+        pageCount: 10
+        pageIndex: 1
+        pageSize: 20
+        rows: []
+        total: 196
+      encrypt: 0
+      msg: 参数解析失败,请检查您的参数
+      ret: -10001
+- name: listAllImageTask
+  request:
+    body:
+      _v: 5.6.0
+      accessionNo: ''
+      creatTimeList: []
+      diagnosisStatus: ''
+      handle: 0
+      pageIndex: 1
+      pageSize: 20
+      patient: ''
+      rebuildStatus: ''
+      studyDateShotList:
+      - 2022-11-02 00:00
+      - 2022-11-02 23:59
+      taskType: ''
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/listAllImageTask
+  response:
+    status: 200
+    text:
+      data:
+        hasNext: false
+        hasPrevious: false
+        pageCount: 0
+        pageIndex: 1
+        pageSize: 0
+        rows: []
+        total: 0
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 登录用例_login_admin
+  request:
+    body:
+      _v: 5.6.0
+      name: admin
+      pass: Deepwise!@#123
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/rest/user/web/login
+  response:
+    status: 200
+    text:
+      data:
+        disp_name: who am i
+        job_titile: null
+        loginFlag: '1'
+        name: admin
+        phone: null
+        real_name: null
+        role: admin
+        token: 0fa75db47e6973419a688bd220fb232f_1
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 登录用例_login_common
+  request:
+    body:
+      _v: 5.6.0
+      name: custom
+      pass: Deepwise!@#123
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/rest/user/web/login
+  response:
+    status: 200
+    text:
+      data:
+        disp_name: who am i
+        job_titile: null
+        loginFlag: '1'
+        name: admin
+        phone: null
+        real_name: null
+        role: admin
+        token: 0fa75db47e6973419a688bd220fb232f_1
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 登录用例_login_error_name
+  request:
+    body:
+      _v: 5.6.0
+      name: admin123
+      pass: Deepwise!@#123
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/rest/user/web/login
+  response:
+    status: 200
+    text:
+      data:
+        disp_name: who am i
+        job_titile: null
+        loginFlag: '1'
+        name: admin
+        phone: null
+        real_name: null
+        role: admin
+        token: 0fa75db47e6973419a688bd220fb232f_1
+      encrypt: 0
+      msg: 登录失败,请检查用户或密码
+      ret: 0
+- name: 登录用例_login_error_password
+  request:
+    body:
+      _v: 5.6.0
+      name: admin
+      pass: Deepwise!@#12
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/rest/user/web/login
+  response:
+    status: 200
+    text:
+      data:
+        disp_name: who am i
+        job_titile: null
+        loginFlag: '1'
+        name: admin
+        phone: null
+        real_name: null
+        role: admin
+        token: 0fa75db47e6973419a688bd220fb232f_1
+      encrypt: 0
+      msg: 登录失败,请检查用户或密码
+      ret: 0
+- name: 登录用例_login_null_name
+  request:
+    body:
+      _v: 5.6.0
+      name: null
+      pass: Deepwise!@#123
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/rest/user/web/login
+  response:
+    status: 200
+    text:
+      data:
+        disp_name: who am i
+        job_titile: null
+        loginFlag: '1'
+        name: admin
+        phone: null
+        real_name: null
+        role: admin
+        token: 0fa75db47e6973419a688bd220fb232f_1
+      encrypt: 0
+      msg: errorCode:-10009,msg:empty object
+      ret: 0
+- name: 登录用例_login_null_password
+  request:
+    body:
+      _v: 5.6.0
+      name: admin
+      pass: null
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/rest/user/web/login
+  response:
+    status: 200
+    text:
+      data:
+        disp_name: who am i
+        job_titile: null
+        loginFlag: '1'
+        name: admin
+        phone: null
+        real_name: null
+        role: admin
+        token: 0fa75db47e6973419a688bd220fb232f_1
+      encrypt: 0
+      msg: errorCode:-10009,msg:empty object
+      ret: 0

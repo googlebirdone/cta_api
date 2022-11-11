@@ -1,0 +1,4 @@
+allure-pytest==2.9.43
+pytest-assume==2.4.3
+PyYAML==5.1.2
+requests==2.22.0

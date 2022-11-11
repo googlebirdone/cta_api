@@ -1,0 +1,513 @@
+- name: pushToOtherPacs
+  request:
+    body:
+      pacsList:
+        - 'DCM4CHEE@192.168.103.9:11112'
+      patientId: '1470586'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646698543.7.1013600002.1
+      studyUid: 1.2.410.200010.86.101.202203080020
+      seriesType:
+        - lumen
+        - custom
+      operationData: null
+      merge: false
+      vesselName:
+        - LCX
+      path: []
+      pushType: ''
+      markedData: []
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: pushToOtherPacs_多pacs
+  request:
+    body:
+      pacsList:
+        - 'DCM4CHEE@192.168.103.9:11112'
+        - 'DEEPWISESCP@192.168.103.9:22222'
+      patientId: '1470586'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646698543.7.1013600002.1
+      studyUid: 1.2.410.200010.86.101.202203080020
+      seriesType:
+        - lumen
+        - custom
+      operationData: null
+      merge: false
+      vesselName:
+        - LCX
+      path: []
+      pushType: ''
+      markedData: []
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: pushToOtherPacs_pacs不存在
+  request:
+    body:
+      pacsList:
+        - 'DCM4CHEE@172.168.103.9:11112'
+      patientId: '1470586'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646698543.7.1013600002.1
+      studyUid: 1.2.410.200010.86.101.202203080020
+      seriesType:
+        - lumen
+        - custom
+      operationData: null
+      merge: false
+      vesselName:
+        - LCX
+      path: []
+      pushType: ''
+      markedData: []
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+  response:
+    status: 200
+    text:
+      ret: -104
+      msg: pacs不存在
+      data: null
+      encrypt: 0
+- name: pushToOtherPacs_pacs参数类型错误
+  request:
+    body:
+      pacsList: 'DCM4CHEE@192.168.103.9:11112'
+      patientId: '1470586'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646698543.7.1013600002.1
+      studyUid: 1.2.410.200010.86.101.202203080020
+      seriesType:
+        - lumen
+        - custom
+      operationData: null
+      merge: false
+      vesselName:
+        - LCX
+      path: []
+      pushType: ''
+      markedData: []
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+  response:
+    status: 200
+    text:
+      ret: -10001
+      msg: 参数解析失败,请检查您的参数
+      data: null
+      encrypt: 0
+- name: pushToOtherPacs_不存在的三元组
+  request:
+    body:
+      pacsList:
+        - 'DCM4CHEE@192.168.103.9:11112'
+      patientId: '14705860'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646698543.7.1013600002.1
+      studyUid: 1.2.410.200010.86.101.202203080020
+      seriesType:
+        - lumen
+        - custom
+      operationData: null
+      merge: false
+      vesselName:
+        - LCX
+      path: []
+      pushType: ''
+      markedData: []
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+  response:
+    status: 200
+    text:
+      ret: -103
+      msg: 要发送文件的路径不存在
+      data: null
+      encrypt: 0
+- name: pushToOtherPacs_血管参数类型错误
+  request:
+    body:
+      pacsList:
+        - 'DCM4CHEE@192.168.103.9:11112'
+      patientId: '1470586'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646698543.7.1013600002.1
+      studyUid: 1.2.410.200010.86.101.202203080020
+      seriesType:
+        - lumen
+        - custom
+      operationData: null
+      merge: false
+      vesselName: LCX
+      path: []
+      pushType: ''
+      markedData: []
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+  response:
+    status: 200
+    text:
+      ret: -10001
+      msg: 参数解析失败,请检查您的参数
+      data: null
+      encrypt: 0
+- name: pushToOtherPacs_不存在的序列类型
+  request:
+    body:
+      pacsList:
+        - 'DCM4CHEE@192.168.103.9:11112'
+      patientId: '1470586'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646698543.7.1013600002.1
+      studyUid: 1.2.410.200010.86.101.202203080020
+      seriesType:
+        - lumens
+        - customs
+      operationData: null
+      merge: false
+      vesselName:
+        - LCX
+      path: []
+      pushType: ''
+      markedData: []
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: pushToOtherPacs_不存在的血管名称
+  request:
+    body:
+      pacsList:
+        - 'DCM4CHEE@192.168.103.9:11112'
+      patientId: '1470586'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646698543.7.1013600002.1
+      studyUid: 1.2.410.200010.86.101.202203080020
+      seriesType:
+        - lumen
+        - custom
+      operationData: null
+      merge: false
+      vesselName:
+        - LCP
+      path: []
+      pushType: ''
+      markedData: []
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: pushToOtherPacs_反色内容为空
+  request:
+    body:
+      pacsList:
+        - 'DCM4CHEE@192.168.103.9:11112'
+      patientId: '1470586'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646698543.7.1013600002.1
+      studyUid: 1.2.410.200010.86.101.202203080020
+      seriesType:
+        - lumen
+        - custom
+      operationData: null
+      merge: false
+      vesselName:
+        - LCX
+      path: []
+      pushType: ''
+      markedData: [{"":""}]
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: getPrintModule_获取已打印内容
+  request:
+    body:
+      bodyPart: cerebral
+      fromMode: '101'
+      patientId: '1251548'
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '104'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: ''
+      encrypt: 0
+- name: getPrintModule_不匹配的三元组
+  request:
+    body:
+      bodyPart: cerebral
+      fromMode: '101'
+      patientId: '12515481'
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '104'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+  response:
+    status: 200
+    text:
+      ret: -1
+      msg: no data
+      data: null
+      encrypt: 0
+- name: getPrintModule_丢失患者id
+  request:
+    body:
+      bodyPart: cerebral
+      fromMode: '101'
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '104'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+  response:
+    status: 200
+    text:
+      ret: -10001
+      msg: patientId不能为空
+      data: null
+      encrypt: 0
+- name: getPathByType_获取全部影像
+  request:
+    body:
+      bodyPart: cerebral
+      fromMode: '101'
+      patientId: '1251548'
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '104'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getPathByType
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: ''
+      encrypt: 0
+- name: getPathByType_获取全部影像_不匹配三元组
+  request:
+    body:
+      bodyPart: cerebral
+      fromMode: '101'
+      patientId: '1251548'
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '104'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getPathByType
+  response:
+    status: 200
+    text:
+      ret: -1
+      msg: no data
+      data: null
+      encrypt: 0
+- name: getPathByType_获取全部影像_缺少患者id
+  request:
+    body:
+      bodyPart: cerebral
+      fromMode: '101'
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '104'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getPathByType
+  response:
+    status: 200
+    text:
+      ret: -10001
+      msg: patientId不能为空
+      data: null
+      encrypt: 0
+- name: getPathByType_获取全部影像_缺少患者检查信息
+  request:
+    body:
+      bodyPart: cerebral
+      fromMode: '101'
+      patientId: '1251548'
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      toMode: '104'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getPathByType
+  response:
+    status: 200
+    text:
+      ret: -10001
+      msg: studyUid不能为空
+      data: null
+      encrypt: 0
+- name: getPathByType_获取全部影像_缺少患者序列信息
+  request:
+    body:
+      bodyPart: cerebral
+      fromMode: '101'
+      patientId: '1251548'
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '104'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getPathByType
+  response:
+    status: 200
+    text:
+      ret: -10001
+      msg: seriesUid不能为空
+      data: null
+      encrypt: 0
+- name: filmCornerByPath_获取四角信息_缺少影像内容
+  request:
+    body:
+      bodyPart: head
+      fromMode: '101'
+      images: []
+      patientId: '1251548'
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '104'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/filmCornerByPath
+  response:
+    status: 200
+    text:
+      ret: -10000
+      msg: lack of parameters
+      data: null
+      encrypt: 0
+- name: filmCornerByPath_获取四角信息_不存在的影像
+  request:
+    body:
+      bodyPart: head
+      fromMode: '101'
+      images:
+        - /data1/inputdata/1251548/1B98F4D2/D2FA454D/001.dcm
+      patientId: '1251548'
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '104'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/filmCornerByPath
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data:
+        /data1/inputdata/1251548/1B98F4D2/D2FA454D/001.dcm: null
+      encrypt: 0
+- name: filmCornerByPath_获取四角信息_上传目录
+  request:
+    body:
+      bodyPart: head
+      fromMode: '101'
+      images:
+        - /data1/tmp
+      patientId: '1251548'
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '104'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/filmCornerByPath
+  response:
+    status: 200
+    text:
+      ret: 10004
+      msg: null
+      data: null
+      encrypt: 0

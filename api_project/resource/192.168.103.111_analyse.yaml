@@ -1,0 +1,2175 @@
+- name: getUserIp
+  request:
+    body: ''
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: GET
+    params: bodyPart=coronary&patientId=1470600&seriesUid=1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1&studyUid=1.2.410.200010.86.101.202203070340&toMode=101&_v=5.6.0
+    url: http://192.168.103.11:888/pacs/v2/dicom/getUserIp
+  response:
+    status: 200
+    text:
+      data:
+        ip: 192.168.115.59
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: getViewerSettings
+  request:
+    body:
+      type: CTAVessel
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/ris/v2/viewer/getViewerSettings
+  response:
+    status: 200
+    text:
+      data:
+        webview_system_diagnose_settings:
+          info: 0
+        webview_system_operation_settings:
+          leftMouseButton: 0
+          middleMouseButton: 3
+          rightMouseButton: 1
+        webview_system_print_settings:
+          autoTransform: 1
+          fillPrefix: 1
+          info: 1
+          order: 1
+          type: 1
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: isNeedTips_matchinfo
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/isNeedTips
+  response:
+    status: 200
+    text:
+      data: false
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: isNeedTips_not_matchinfo
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470624'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/isNeedTips
+  response:
+    status: 200
+    text:
+      data: false
+      encrypt: 0
+      msg: no data
+      ret: -1
+- name: isNeedTips_lose_pid
+  request:
+    body:
+      bodyPart: coronary
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/isNeedTips
+  response:
+    status: 200
+    text:
+      data: false
+      encrypt: 0
+      msg: patientId不能为空
+      ret: -10001
+- name: isNeedTips_lose_study
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/isNeedTips
+  response:
+    status: 200
+    text:
+      data: false
+      encrypt: 0
+      msg: studyUid不能为空
+      ret: -10001
+- name: isNeedTips_lose_sery
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/isNeedTips
+  response:
+    status: 200
+    text:
+      data: false
+      encrypt: 0
+      msg: seriesUid不能为空
+      ret: -10001
+- name: isNeedTips_not_exit_info
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '664126541'
+      seriesUid: 1.3.12.2.1107.5.1.4.74063.30000022012700194274700121887
+      studyUid: 1.2.410.200010.1151636.9238.13993313.22616762.22616762
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/isNeedTips
+  response:
+    status: 200
+    text:
+      data: false
+      encrypt: 0
+      msg: no data
+      ret: -1
+- name: diagnosisInfo_coronary
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/diagnosisInfo
+  response:
+    status: 200
+    text:
+      data:
+        diagnosisToVes:
+          AM: AM
+          D1: D1
+          D2: D2
+          D3: D3
+          D4: D4
+          LCx: LCX
+          LM: LAD
+          LPDA: LPDA
+          LPLB: LPLB
+          OM1: OM1
+          OM2: OM2
+          OM3: OM3
+          OM4: OM4
+          RI: RI
+          RPDA: RPDA
+          RPLB: RPLB
+          dLAD: LAD
+          dRCA: RCA
+          mLAD: LAD
+          mRCA: RCA
+          pCx: LCX
+          pLAD: LAD
+          pRCA: RCA
+        vesToDiagnosis:
+          AM: AM
+          D1: D1
+          D2: D2
+          D3: D3
+          D4: D4
+          LAD: LM
+          LCX: pCx
+          LPDA: LPDA
+          LPLB: LPLB
+          OM1: OM1
+          OM2: OM2
+          OM3: OM3
+          OM4: OM4
+          RCA: pRCA
+          RI: RI
+          RPDA: RPDA
+          RPLB: RPLB
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: diagnosisInfo_cerebral
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: cerebral
+      patientId: '10077938'
+      seriesUid: 1.2.840.113619.2.416.129435264733872927720149291591781045826
+      studyUid: 1.2.840.113619.2.416.184672385895843906630209034271708845585
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/diagnosisInfo
+  response:
+    status: 200
+    text:
+      data:
+        diagnosisToVes:
+          AOAR: L_ICA
+          RSA: R_SA
+          LPCA: L_PCA
+          RCCA: R_ICA
+          RPCOMA: R_PCA
+          RACA: R_ACA
+          LACA: L_ACA
+          BCT: R_ICA
+          ACOMA: L_ACA
+          RICA: R_ICA
+          LPCOMA: L_PCA
+          LECA: L_ECA
+          LCCA: L_ICA
+          LVA: L_VA
+          RECA: R_ECA
+          LICA: L_ICA
+          RPCA: R_PCA
+          LSA: L_SA
+          RVA: R_VA
+          LMCA: L_MCA
+          BA: L_VA
+          RMCA: R_MCA
+        vesToDiagnosis:
+          L_PCA: LPCA
+          L_SA: LSA
+          L_MCA: LMCA
+          L_ECA: LECA
+          R_PCA: RPCA
+          L_ICA: LICA
+          R_MCA: RMCA
+          R_ICA: RICA
+          L_ACA: LACA
+          R_ECA: RECA
+          L_VA: LVA
+          R_SA: RSA
+          R_ACA: RACA
+          R_VA: RVA
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: diagnosisInfo_coronary_unmatch
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470624'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/diagnosisInfo
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: no data
+      ret: -1
+- name: diagnosisInfo_coronary_losepid
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/diagnosisInfo
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: patientId不能为空
+      ret: -10001
+- name: diagnosisInfo_lose_study
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/diagnosisInfo
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: studyUid不能为空
+      ret: -10001
+- name: diagnosisInfo_lose_sery
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/diagnosisInfo
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: seriesUid不能为空
+      ret: -10001
+- name: 获取诊断结果_存在的用户
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getAiResult
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 获取诊断结果_不存在的用户
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470624'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getAiResult
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 获取诊断结果_缺失用户pid
+  request:
+    body:
+      bodyPart: coronary
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getAiResult
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: patientId不能为空
+      ret: -10001
+- name: 获取诊断结果_缺失用户检查信息
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getAiResult
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: studyUid不能为空
+      ret: -10001
+- name: 获取诊断结果_缺失用户序列信息
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getAiResult
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: seriesUid不能为空
+      ret: -10001
+- name: 获取检查下的序列信息
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getSeriesList
+  response:
+    status: 200
+    text:
+      data:
+      - archiveStatus: 0
+        bodyPart: coronary
+        dataStatus: 0
+        diagnosisStatus: 17
+        patientId: '1470600'
+        phase: null
+        rebuildStatus: 12
+        seriesDesc: coronary
+        seriesNum: 560
+        seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+        sliceThickness: '0.5'
+        studyUid: 1.2.410.200010.86.101.202203070340
+        taskType: CoronaryVessel
+        taskTypeNew: Coronary_cta
+        viewImage: /data1/inputdata/1470600/B4B16D36/CDE45C33/1400.dcm
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 获取检查下的序列信息_不匹配的三元组
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470624'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getSeriesList
+  response:
+    status: 200
+    text:
+      data: []
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 获取检查下的序列信息_缺失患者id
+  request:
+    body:
+      bodyPart: coronary
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getSeriesList
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: patientId不能为空
+      ret: -10001
+- name: 获取检查下的序列信息_丢失患者检查信息
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getSeriesList
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: studyUid不能为空
+      ret: -10001
+- name: 获取检查下的序列信息_丢失用户序列信息
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getSeriesList
+  response:
+    status: 200
+    text:
+      data:
+      - archiveStatus: 0
+        bodyPart: coronary
+        dataStatus: 0
+        diagnosisStatus: 17
+        patientId: '1470600'
+        phase: null
+        rebuildStatus: 12
+        seriesDesc: coronary
+        seriesNum: 560
+        seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+        sliceThickness: '0.5'
+        studyUid: 1.2.410.200010.86.101.202203070340
+        taskType: CoronaryVessel
+        taskTypeNew: Coronary_cta
+        viewImage: /data1/inputdata/1470600/B4B16D36/CDE45C33/1400.dcm
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 获取血管分割mask
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/mask/getVesselMask
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 获取血管分割_信息不匹配
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470624'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/mask/getVesselMask
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 获取血管分割_缺少患者pid
+  request:
+    body:
+      bodyPart: coronary
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/mask/getVesselMask
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: patientId不能为空
+      ret: -10001
+- name: 获取血管分割_缺少患者检查信息
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/mask/getVesselMask
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: studyUid不能为空
+      ret: -10001
+- name: 获取血管分割_缺少患者序列信息
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/mask/getVesselMask
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: seriesUid不能为空
+      ret: -10001
+- name: 获取诊断栏信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/diagnosis/info
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 获取诊断栏信息_不匹配信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/diagnosis/info
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 获取诊断栏信息_丢失患者编号
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/diagnosis/info
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: patientId不能为空
+      ret: -10001
+- name: 获取诊断栏信息_丢失患者检查信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/diagnosis/info
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: studyUid不能为空
+      ret: -10001
+- name: 获取诊断栏信息_丢失患者序列信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/diagnosis/info
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: seriesUid不能为空
+      ret: -10001
+- name: getReport
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getReport
+  response:
+    status: 200
+    text:
+      data:
+        seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+        studyDateShoot: 1646622908000
+        studyUid: 1.2.410.200010.86.101.202203070340
+        taskType: CoronaryVessel
+        taskTypeNew: Coronary_cta
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 获取患者报告_不匹配得信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getReport
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: no data
+      ret: 0
+- name: 获取患者报告_丢失患者编号
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getReport
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: patientId不能为空
+      ret: -10001
+- name: 获取患者报告_丢失患者检查信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getReport
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: studyUid不能为空
+      ret: -10001
+- name: 获取患者报告_丢失患者序列信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getReport
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: seriesUid不能为空
+      ret: -10001
+- name: 获取血管中心线
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      vessel:
+      - coro022
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getCenterline
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 获取血管中心线_不存在的血管
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      vessel:
+        - coro099
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getCenterline
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 数据显示异常，请返回数据列表重新计算
+      ret: -33
+- name: 获取血管中心线_多个血管
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      vessel:
+      - coro022
+      - coro023
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getCenterline
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 获取血管中心线_丢失血管编号
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      vessel: []
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getCenterline
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 数据显示异常，请返回数据列表重新计算
+      ret: -33
+- name: 获取血管中心线_血管参数错误
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      vessel: {"id":["coro022"]}
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getCenterline
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 参数解析失败,请检查您的参数
+      ret: -10001
+- name: 获取血管中心线_丢失血管参数
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getCenterline
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 数据显示异常，请返回数据列表重新计算
+      ret: -33
+- name: 获取血管中心线_不匹配的三元组信息
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470624'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      vessel:
+      - coro022
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getCenterline
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 数据显示异常，请返回数据列表重新计算
+      ret: -33
+- name: 获取血管中心线_丢失患者编号
+  request:
+    body:
+      bodyPart: coronary
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      vessel:
+      - coro022
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getCenterline
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 数据显示异常，请返回数据列表重新计算
+      ret: -33
+- name: 获取血管中心线_丢失患者检查信息
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      toMode: '101'
+      vessel:
+      - coro022
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getCenterline
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 数据显示异常，请返回数据列表重新计算
+      ret: -33
+- name: 获取血管中心线_丢失患者序列信息
+  request:
+    body:
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      vessel:
+      - coro022
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/getCenterline
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 数据显示异常，请返回数据列表重新计算
+      ret: -33
+- name: 单个影像信息获取
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/oneImageTaskInfo
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 单个影像信息获取_不匹配的三元组
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470624'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/oneImageTaskInfo
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: no data
+      ret: -1
+- name: 单个影像信息获取_丢失患者编号
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/oneImageTaskInfo
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: patientId不能为空
+      ret: -10001
+- name: 单个影像信息获取_丢失患者检查信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/oneImageTaskInfo
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: studyUid不能为空
+      ret: -10001
+- name: 单个影像信息获取_丢失患者序列信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      patientId: '1470600'
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/oneImageTaskInfo
+  response:
+    status: 200
+    text:
+      data: {}
+      encrypt: 0
+      msg: seriesUid不能为空
+      ret: -10001
+- name: 更新诊断结果
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      operationData:
+        left_originate: left_sinus
+      operationNo: 7
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 更新诊断结果_错误的操作码
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      operationData:
+        left_originate: left_sinus
+      operationNo: 1
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: lack of parameters
+      ret: -10000
+- name: 更新诊断结果_操作码为空
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      operationData:
+        left_originate: left_sinus
+      operationNo: null
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: lack of parameters
+      ret: -10000
+- name: 更新诊断结果_缺少操作数据
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      operationData: null
+      operationNo: 7
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: 更新诊断结果_操作数据参数错误
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      operationData:
+        - left_originate
+        - left_sinus
+      operationNo: 7
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 参数解析失败,请检查您的参数
+      ret: -10001
+- name: 更新诊断结果_不匹配的患者信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      operationData:
+        left_originate: left_sinus
+      operationNo: 7
+      patientId: '1470624'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: no data
+      ret: -1
+- name: 更新诊断结果_丢失患者编号
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      operationData:
+        left_originate: left_sinus
+      operationNo: 7
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: lack of parameters
+      ret: -10000
+- name: 更新诊断结果_丢失患者检查信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      operationData:
+        left_originate: left_sinus
+      operationNo: 7
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: lack of parameters
+      ret: -10000
+- name: 更新诊断结果_丢失患者序列信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      operationData:
+        left_originate: left_sinus
+      operationNo: 7
+      patientId: '1470600'
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: lack of parameters
+      ret: -10000
+- name: delete
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      focusInfo:
+        bbox3d: null
+        bodyPart: coronary
+        color: '#ff915f'
+        cpr_index: 7
+        dcm_index: null
+        diameter: null
+        guid: 89f8c684-b311-4329-bc1e-77ac65b0a4ff
+        is_stenosis_visible: true
+        length: '102.0'
+        mainVesselId: coro022
+        max_diameter: null
+        merged_centerline_range: null
+        merged_centerline_range_new:
+        - 234
+        - 340
+        - 972
+        plaque_distribution: diffuse
+        plaque_type: noncalcified
+        rois: null
+        segment: null
+        segment_end: null
+        segment_start: null
+        stenosis_desc: "\u91CD\u5EA6\u72ED\u7A84"
+        stenosis_rate: 95
+        stenosis_type: high
+        subVesselName: pRCA
+        thickness: null
+        type: plaque
+        unit: mm
+      name: pRCA
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      type: plaque
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/diagnosis/delete
+  response:
+    status: 200
+    text:
+      data: 1
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: delete_缺少关键信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      focusInfo: null
+      name: pRCA
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      type: plaque
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/diagnosis/delete
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: null
+      ret: 10004
+- name: delete_不存在的血管id
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      focusInfo:
+        bbox3d: null
+        bodyPart: coronary
+        color: '#ff915f'
+        cpr_index: 7
+        dcm_index: null
+        diameter: null
+        guid: 89f8c684-b311-4329-bc1e-77ac65b0a4ff
+        is_stenosis_visible: true
+        length: '102.0'
+        mainVesselId: coro016
+        max_diameter: null
+        merged_centerline_range: null
+        merged_centerline_range_new:
+        - 234
+        - 340
+        - 972
+        plaque_distribution: diffuse
+        plaque_type: noncalcified
+        rois: null
+        segment: null
+        segment_end: null
+        segment_start: null
+        stenosis_desc: "\u91CD\u5EA6\u72ED\u7A84"
+        stenosis_rate: 95
+        stenosis_type: high
+        subVesselName: OM5
+        thickness: null
+        type: plaque
+        unit: mm
+      name: OM5
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      type: plaque
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/diagnosis/delete
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: illegal parameters
+      ret: -10001
+- name: delete_不匹配的三元组
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      focusInfo:
+        bbox3d: null
+        bodyPart: coronary
+        color: '#ff915f'
+        cpr_index: 7
+        dcm_index: null
+        diameter: null
+        guid: 89f8c684-b311-4329-bc1e-77ac65b0a4ff
+        is_stenosis_visible: true
+        length: '102.0'
+        mainVesselId: coro022
+        max_diameter: null
+        merged_centerline_range: null
+        merged_centerline_range_new:
+        - 234
+        - 340
+        - 972
+        plaque_distribution: diffuse
+        plaque_type: noncalcified
+        rois: null
+        segment: null
+        segment_end: null
+        segment_start: null
+        stenosis_desc: "\u91CD\u5EA6\u72ED\u7A84"
+        stenosis_rate: 95
+        stenosis_type: high
+        subVesselName: pRCA
+        thickness: null
+        type: plaque
+        unit: mm
+      name: pRCA
+      patientId: '1470624'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      type: plaque
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/diagnosis/delete
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 序列不存在
+      ret: -38
+- name: delete
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      focusInfo:
+        bbox3d: null
+        bodyPart: coronary
+        color: '#ff915f'
+        cpr_index: 7
+        dcm_index: null
+        diameter: null
+        guid: 89f8c684-b311-4329-bc1e-77ac65b0a4ff
+        is_stenosis_visible: true
+        length: '102.0'
+        mainVesselId: coro022
+        max_diameter: null
+        merged_centerline_range: null
+        merged_centerline_range_new:
+        - 234
+        - 340
+        - 972
+        plaque_distribution: diffuse
+        plaque_type: noncalcified
+        rois: null
+        segment: null
+        segment_end: null
+        segment_start: null
+        stenosis_desc: "\u91CD\u5EA6\u72ED\u7A84"
+        stenosis_rate: 95
+        stenosis_type: high
+        subVesselName: pRCA
+        thickness: null
+        type: plaque
+        unit: mm
+      name: pRCA
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      type: plaque
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/diagnosis/delete
+  response:
+    status: 200
+    text:
+      data: 1
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: delete_缺失患者id
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      focusInfo:
+        bbox3d: null
+        bodyPart: coronary
+        color: '#ff915f'
+        cpr_index: 7
+        dcm_index: null
+        diameter: null
+        guid: 89f8c684-b311-4329-bc1e-77ac65b0a4ff
+        is_stenosis_visible: true
+        length: '102.0'
+        mainVesselId: coro022
+        max_diameter: null
+        merged_centerline_range: null
+        merged_centerline_range_new:
+        - 234
+        - 340
+        - 972
+        plaque_distribution: diffuse
+        plaque_type: noncalcified
+        rois: null
+        segment: null
+        segment_end: null
+        segment_start: null
+        stenosis_desc: "\u91CD\u5EA6\u72ED\u7A84"
+        stenosis_rate: 95
+        stenosis_type: high
+        subVesselName: pRCA
+        thickness: null
+        type: plaque
+        unit: mm
+      name: pRCA
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      type: plaque
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/diagnosis/delete
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 序列不存在
+      ret: -38
+- name: delete_缺失患者检查信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      focusInfo:
+        bbox3d: null
+        bodyPart: coronary
+        color: '#ff915f'
+        cpr_index: 7
+        dcm_index: null
+        diameter: null
+        guid: 89f8c684-b311-4329-bc1e-77ac65b0a4ff
+        is_stenosis_visible: true
+        length: '102.0'
+        mainVesselId: coro022
+        max_diameter: null
+        merged_centerline_range: null
+        merged_centerline_range_new:
+        - 234
+        - 340
+        - 972
+        plaque_distribution: diffuse
+        plaque_type: noncalcified
+        rois: null
+        segment: null
+        segment_end: null
+        segment_start: null
+        stenosis_desc: "\u91CD\u5EA6\u72ED\u7A84"
+        stenosis_rate: 95
+        stenosis_type: high
+        subVesselName: pRCA
+        thickness: null
+        type: plaque
+        unit: mm
+      name: pRCA
+      patientId: '1470600'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1
+      toMode: '101'
+      type: plaque
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/diagnosis/delete
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 序列不存在
+      ret: -38
+- name: delete_缺失患者序列信息
+  request:
+    body:
+      _v: 5.6.0
+      bodyPart: coronary
+      focusInfo:
+        bbox3d: null
+        bodyPart: coronary
+        color: '#ff915f'
+        cpr_index: 7
+        dcm_index: null
+        diameter: null
+        guid: 89f8c684-b311-4329-bc1e-77ac65b0a4ff
+        is_stenosis_visible: true
+        length: '102.0'
+        mainVesselId: coro022
+        max_diameter: null
+        merged_centerline_range: null
+        merged_centerline_range_new:
+        - 234
+        - 340
+        - 972
+        plaque_distribution: diffuse
+        plaque_type: noncalcified
+        rois: null
+        segment: null
+        segment_end: null
+        segment_start: null
+        stenosis_desc: "\u91CD\u5EA6\u72ED\u7A84"
+        stenosis_rate: 95
+        stenosis_type: high
+        subVesselName: pRCA
+        thickness: null
+        type: plaque
+        unit: mm
+      name: pRCA
+      patientId: '1470600'
+      studyUid: 1.2.410.200010.86.101.202203070340
+      toMode: '101'
+      type: plaque
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/diagnosis/delete
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 序列不存在
+      ret: -38
+- name: willisItems
+  request:
+    body:
+      bodyPart: cerebral
+      patientId: '1251548'
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '101'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/willisItems
+  response:
+    status: 200
+    text:
+      data:
+        foreloop:
+          - id: 0
+            uuid: 6a5f9acf4ba24e1d8ac4c3144066748e
+            desc: 前循环发育正常
+          - id: 1
+            uuid: 1aacc1f7a4d54088bc45f9308a280f08
+            desc: 左侧大脑前水平段发育不良或缺如
+          - id: 2
+            uuid: d0937a7425dd49e6a1c484251a974585
+            desc: 右侧大脑前水平段发育不良或缺如
+          - id: 3
+            uuid: fdf76a16edd1465b8fc9a0da6fcc483d
+            desc: 前交通发育不良或缺如
+        backloop:
+          - id: 0
+            uuid: bbd7737657104b908454502d015361a3
+            desc: 后循环发育正常
+          - id: 1
+            uuid: 7bca7b47ed3e4a5ca2985e0eecd5b19e
+            desc: 左侧后交通发育不良或缺如
+          - id: 2
+            uuid: c1db91416a514194a061cf459cfe6c5a
+            desc: 右侧后交通发育不良或缺如
+          - id: 3
+            uuid: 052b67c0c9c547e1b652db5dc2fbb0c9
+            desc: 双侧后交通发育不良或缺如
+          - id: 4
+            uuid: 85f36f92ce464660a0078ece1bd2e428
+            desc: 左侧胚胎型大脑后动脉
+          - id: 5
+            uuid: a27ba01a92764fe29d0288d148575985
+            desc: 右侧胚胎型大脑后动脉
+          - id: 6
+            uuid: 95e87dc68ee04b4ab150c5629d72890a
+            desc: 双侧胚胎型大脑后动脉
+          - id: 7
+            uuid: 237c4970e3aa4b8bb0e0f5ef838b8be8
+            desc: 左侧后交通动脉漏斗
+          - id: 8
+            uuid: e6a0b330639c4927b119335a7ebd10fc
+            desc: 右侧后交通动脉漏斗
+          - id: 9
+            uuid: 130e5815c61d4f6083fdaa26f3703d4b
+            desc: 双侧后交通动脉漏斗
+        selected:
+          - 1aacc1f7a4d54088bc45f9308a280f08
+          - bbd7737657104b908454502d015361a3
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: willisItems_冠脉的三元组信息_默认也返回
+  request:
+    body:
+      bodyPart: cerebral
+      patientId: '1463965'
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1609898427.7.1019700002.1
+      studyUid: 1.2.410.200010.86.101.202101060131
+      toMode: '101'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/willisItems
+  response:
+    status: 200
+    text:
+      data:
+        foreloop:
+          - id: 0
+            uuid: 6a5f9acf4ba24e1d8ac4c3144066748e
+            desc: 前循环发育正常
+          - id: 1
+            uuid: 1aacc1f7a4d54088bc45f9308a280f08
+            desc: 左侧大脑前水平段发育不良或缺如
+          - id: 2
+            uuid: d0937a7425dd49e6a1c484251a974585
+            desc: 右侧大脑前水平段发育不良或缺如
+          - id: 3
+            uuid: fdf76a16edd1465b8fc9a0da6fcc483d
+            desc: 前交通发育不良或缺如
+        backloop:
+          - id: 0
+            uuid: bbd7737657104b908454502d015361a3
+            desc: 后循环发育正常
+          - id: 1
+            uuid: 7bca7b47ed3e4a5ca2985e0eecd5b19e
+            desc: 左侧后交通发育不良或缺如
+          - id: 2
+            uuid: c1db91416a514194a061cf459cfe6c5a
+            desc: 右侧后交通发育不良或缺如
+          - id: 3
+            uuid: 052b67c0c9c547e1b652db5dc2fbb0c9
+            desc: 双侧后交通发育不良或缺如
+          - id: 4
+            uuid: 85f36f92ce464660a0078ece1bd2e428
+            desc: 左侧胚胎型大脑后动脉
+          - id: 5
+            uuid: a27ba01a92764fe29d0288d148575985
+            desc: 右侧胚胎型大脑后动脉
+          - id: 6
+            uuid: 95e87dc68ee04b4ab150c5629d72890a
+            desc: 双侧胚胎型大脑后动脉
+          - id: 7
+            uuid: 237c4970e3aa4b8bb0e0f5ef838b8be8
+            desc: 左侧后交通动脉漏斗
+          - id: 8
+            uuid: e6a0b330639c4927b119335a7ebd10fc
+            desc: 右侧后交通动脉漏斗
+          - id: 9
+            uuid: 130e5815c61d4f6083fdaa26f3703d4b
+            desc: 双侧后交通动脉漏斗
+        selected:
+          - 6a5f9acf4ba24e1d8ac4c3144066748e
+          - 95e87dc68ee04b4ab150c5629d72890a
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: willisItems_不匹配的三元组信息
+  request:
+    body:
+      bodyPart: cerebral
+      patientId: '1251550'
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '101'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/willisItems
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: ok
+      ret: 0
+- name: willisItems_缺失患者id
+  request:
+    body:
+      bodyPart: cerebral
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '101'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/willisItems
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: patientId不能为空
+      ret: -10001
+- name: willisItems_缺失患者检查信息
+  request:
+    body:
+      bodyPart: cerebral
+      patientId: '1251548'
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      toMode: '101'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/willisItems
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: studyUid不能为空
+      ret: -10001
+- name: willisItems_缺失患者序列信息
+  request:
+    body:
+      bodyPart: cerebral
+      patientId: '1251550'
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '101'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/willisItems
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: seriesUid不能为空
+      ret: -10001
+- name: saveWillis
+  request:
+    body:
+      bodyPart: cerebral
+      patientId: '1251548'
+      selected:
+        - 6a5f9acf4ba24e1d8ac4c3144066748e
+        - bbd7737657104b908454502d015361a3
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '101'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/saveWillis
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: saveWillis_选择不存在的uuid
+  request:
+    body:
+      bodyPart: cerebral
+      patientId: '1251548'
+      selected:
+        - 6a5f9acf4ba24e1d8ac4c3144066748eq
+        - bbd7737657104b908454502d015361a3q
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '101'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/saveWillis
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: saveWillis_不匹配的三元组信息
+  request:
+    body:
+      bodyPart: cerebral
+      patientId: 'CT1251548'
+      selected:
+        - 6a5f9acf4ba24e1d8ac4c3144066748e
+        - bbd7737657104b908454502d015361a3
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '101'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/saveWillis
+  response:
+    status: 200
+    text:
+      ret: -1
+      msg: no data
+      data: null
+      encrypt: 0
+- name: saveWillis_丢失患者id
+  request:
+    body:
+      bodyPart: cerebral
+      selected:
+        - 6a5f9acf4ba24e1d8ac4c3144066748e
+        - bbd7737657104b908454502d015361a3
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '101'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/saveWillis
+  response:
+    status: 200
+    text:
+      ret: -10001
+      msg: patientId不能为空
+      data: null
+      encrypt: 0
+- name: saveWillis_丢失患者检查信息
+  request:
+    body:
+      bodyPart: cerebral
+      patientId: '1251548'
+      selected:
+        - 6a5f9acf4ba24e1d8ac4c3144066748e
+        - bbd7737657104b908454502d015361a3
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      toMode: '101'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/saveWillis
+  response:
+    status: 200
+    text:
+      ret: -10001
+      msg: studyUid不能为空
+      data: null
+      encrypt: 0
+- name: saveWillis_缺失患者序列信息
+  request:
+    body:
+      bodyPart: cerebral
+      patientId: '1251548'
+      selected:
+        - 6a5f9acf4ba24e1d8ac4c3144066748e
+        - bbd7737657104b908454502d015361a3
+      seriesUid: 1.3.12.2.1107.5.1.4.73275.30000021042823285463600124113
+      studyUid: 1.3.12.2.1107.5.1.4.73275.2021042906354897
+      toMode: '101'
+      _v: 5.6.0
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: http://192.168.103.11:888/cta/image/saveWillis
+  response:
+    status: 200
+    text:
+      ret: -10001
+      msg: seriesUid不能为空
+      data: null
+      encrypt: 0
