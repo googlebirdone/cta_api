@@ -1,10 +1,38 @@
+- name: 登录用例_login_admin
+  request:
+    body:
+      _v: 5.6.0
+      name: admin
+      pass: Deepwise!@#123
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/rest/user/web/login"
+  response:
+    extract: $.data.token
+    status: 200
+    text:
+      data:
+        disp_name: who am i
+        job_titile: null
+        loginFlag: '1'
+        name: admin
+        phone: null
+        real_name: null
+        role: admin
+        token: 0fa75db47e6973419a688bd220fb232f_1
+      encrypt: 0
+      msg: ok
+      ret: 0
 - name: list
   request:
     body: ''
-    headers: {}
+    headers:
+      token: null
     method: GET
     params: ''
-    url: http://192.168.103.11:888/dwcta/study/list
+    url: f"http://{host_port}/dwcta/study/list"
   response:
     status: 200
     text: ""
@@ -13,14 +41,15 @@
     body: ''
     headers:
       Content-Type: application/json;charset=UTF-8
+      token: null
     method: GET
     params: _v=5.6.0
-    url: http://192.168.103.11:888/pacs/v2/dicom/getUserIp
+    url: f"http://{host_port}/pacs/v2/dicom/getUserIp"
   response:
     status: 200
     text:
       data:
-        ip: 192.168.115.59
+        $.data.ip: 192.168.115.59
       encrypt: 0
       msg: ok
       ret: 0
@@ -32,7 +61,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getCtaConfig
+    url: f"http://{host_port}/cta/image/getCtaConfig"
   response:
     status: 200
     text:
@@ -47,7 +76,7 @@
       Content-Type: application/json;charset=UTF-8
     method: GET
     params: _v=5.6.0
-    url: http://192.168.103.11:888/cta/image/statistics
+    url: f"http://{host_port}/cta/image/statistics"
   response:
     status: 200
     text:
@@ -64,7 +93,7 @@
       Content-Type: application/json;charset=UTF-8
     method: GET
     params: _v=5.6.0
-    url: http://192.168.103.11:888/pacs/v2/dicom/getUserIp
+    url: f"http://{host_port}/pacs/v2/dicom/getUserIp"
   response:
     status: 200
     text:
@@ -82,7 +111,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getRoleColumns
+    url: f"http://{host_port}/cta/image/getRoleColumns"
   response:
     status: 200
     text:
@@ -177,7 +206,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -210,7 +239,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -243,7 +272,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -278,7 +307,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -311,7 +340,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -344,7 +373,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -377,7 +406,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -411,7 +440,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -444,7 +473,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -477,7 +506,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -512,7 +541,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -545,7 +574,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -582,7 +611,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -615,7 +644,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -648,7 +677,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -681,7 +710,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -714,7 +743,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -747,7 +776,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -780,7 +809,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -813,7 +842,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -846,7 +875,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -879,7 +908,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -914,7 +943,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/listAllImageTask
+    url: f"http://{host_port}/cta/image/listAllImageTask"
   response:
     status: 200
     text:
@@ -929,32 +958,6 @@
       encrypt: 0
       msg: ok
       ret: 0
-- name: 登录用例_login_admin
-  request:
-    body:
-      _v: 5.6.0
-      name: admin
-      pass: Deepwise!@#123
-    headers:
-      Content-Type: application/json;charset=UTF-8
-    method: POST
-    params: ''
-    url: http://192.168.103.11:888/rest/user/web/login
-  response:
-    status: 200
-    text:
-      data:
-        disp_name: who am i
-        job_titile: null
-        loginFlag: '1'
-        name: admin
-        phone: null
-        real_name: null
-        role: admin
-        token: 0fa75db47e6973419a688bd220fb232f_1
-      encrypt: 0
-      msg: ok
-      ret: 0
 - name: 登录用例_login_common
   request:
     body:
@@ -965,7 +968,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/rest/user/web/login
+    url: f"http://{host_port}/rest/user/web/login"
   response:
     status: 200
     text:
@@ -991,7 +994,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/rest/user/web/login
+    url: f"http://{host_port}/rest/user/web/login"
   response:
     status: 200
     text:
@@ -1017,7 +1020,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/rest/user/web/login
+    url: f"http://{host_port}/rest/user/web/login"
   response:
     status: 200
     text:
@@ -1043,7 +1046,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/rest/user/web/login
+    url: f"http://{host_port}/rest/user/web/login"
   response:
     status: 200
     text:
@@ -1069,7 +1072,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/rest/user/web/login
+    url: f"http://{host_port}/rest/user/web/login"
   response:
     status: 200
     text:
@@ -1085,3 +1088,112 @@
       encrypt: 0
       msg: errorCode:-10009,msg:empty object
       ret: 0
+- name: 重新计算
+  request:
+    body:
+      patientId: '1463934'
+      seriesIndex: -1
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1634004574.8.1011600003.1
+      studyUid: 1.2.410.200010.86.101.202110120386
+      taskType: Coronary_cta
+      _v: 5.6.1
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/pacs/v2/dicom/restart/ai"
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data:
+        patientId: '1463934'
+        studyUid: 1.2.410.200010.86.101.202110120386
+        seriesUid: 1.2.392.200036.9116.2.1220870435.1634004574.8.1011600003.1
+        taskType: Coronary_cta
+      encrypt: 0
+- name: 重新计算_不匹配的三元组信息
+  request:
+    body:
+      patientId: 'CT1463934'
+      seriesIndex: -1
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1634004574.8.1011600003.1
+      studyUid: 1.2.410.200010.86.101.202110120386
+      taskType: Coronary_cta
+      _v: 5.6.1
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/pacs/v2/dicom/restart/ai"
+  response:
+    status: 200
+    text:
+      ret: -1
+      msg: 三元组对应的series不存在
+      data: null
+      encrypt: 0
+- name: 重新计算_丢失患者id
+  request:
+    body:
+      patientId: null
+      seriesIndex: -1
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1634004574.8.1011600003.1
+      studyUid: 1.2.410.200010.86.101.202110120386
+      taskType: Coronary_cta
+      _v: 5.6.1
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/pacs/v2/dicom/restart/ai"
+  response:
+    status: 200
+    text:
+      ret: -1
+      msg: 三元组对应的series不存在
+      data: null
+      encrypt: 0
+- name: 重新计算_丢失患者检查id
+  request:
+    body:
+      patientId: '1463934'
+      seriesIndex: -1
+      seriesUid: 1.2.392.200036.9116.2.1220870435.1634004574.8.1011600003.1
+      studyUid: null
+      taskType: Coronary_cta
+      _v: 5.6.1
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/pacs/v2/dicom/restart/ai"
+  response:
+    status: 200
+    text:
+      ret: -1
+      msg: 三元组对应的series不存在
+      data: null
+      encrypt: 0
+- name: 重新计算_丢失患者序列id
+  request:
+    body:
+      patientId: '1463934'
+      seriesIndex: -1
+      seriesUid: null
+      studyUid: 1.2.410.200010.86.101.202110120386
+      taskType: Coronary_cta
+      _v: 5.6.1
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/pacs/v2/dicom/restart/ai"
+  response:
+    status: 200
+    text:
+      ret: -1
+      msg: 三元组对应的series不存在
+      data: null
+      encrypt: 0

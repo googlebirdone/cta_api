@@ -1,14 +1,18 @@
 import yaml
 import pytest
 import os
+import time
 
+# 动态生成日志文件
+# @pytest.fixture(scope="session", autouse=True)
+# def manage_logs(request):
+#     """Set log file name same as test name"""
+#     now = time.strftime("%Y-%m-%d %H-%M-%S")
+#     log_name = 'api/log/' + now + '.logs'
+#
+#     request.config.pluginmanager.get_plugin("logging-plugin") \
+#         .set_log_path(os.path.join(log_name))
 
-# @pytest.fixture()
-# def read_multi_yaml(request):
-#     global multi_list
-#     for yaml_file in request.param:
-#         multi_list.extend(yaml.safe_load(open(yaml_file, encoding="utf8")))
-#     return multi_list
 
 def pytest_generate_tests(metafunc):
     """ generate (multiple) parametrized calls to a test function."""

@@ -1,16 +1,16 @@
 from api_project.utils.handle_yaml import HandleYaml
 from api_project.utils.utils import Utils
 import requests
-import pytest, yaml, allure, logging, os
+import pytest,  allure, logging, os
 
 
 class TestMakeRequest:
 
-    session = requests.Session()
     test_data = []
+    token = None
     root_path = r"D:\Code\api_project\resource"
     for yaml_file in os.listdir(root_path):
-        if yaml_file.endswith(".yaml"):
+        if yaml_file.endswith("list.yaml"):
             test_data.extend(HandleYaml().read_yaml(os.path.join(root_path, yaml_file)))
 
     # def test_login(self, param):
@@ -20,29 +20,33 @@ class TestMakeRequest:
     # @pytest.mark.parametrize("read_multi_yaml", test_data)
     @allure.title("{param[name]}")
     def test_request(self, param):
-        print(param)
-        url = param.get("request").get("url")
+
+        host_port = "192.168.103.11"
+        global token
+        url = eval(param.get("request").get("url"))
+        # print(url)
         method = param.get("request").get("method")
         header = param.get("request").get("headers")
         data = param.get("request").get("body")
         params = param.get("request").get("params")
         name = param.get("request").get("name")
         response = param.get("response")
+        if header.get("token") is not None:
+            header.update({"token": token[0]})
+            logging.info(f"****{header}")
 
-        # @allure.title(name)
-        # def test_make_request():
-        if method == "GET":
-            res = TestMakeRequest.session.request(method, url, params=params)
-        else:
-            if "json" in header.get("Content-Type"):
-                res = TestMakeRequest.session.request(method, url, headers=header, json=data)
-            else:
-                res = TestMakeRequest.session.request(method, url, headers=header, data=data)
+        res = Utils.request_with_type(method, url, header=header, data=data, params=params)
+        if response.get("extract") is not None:
+            token = Utils.load_token(response.get('extract'), res.json())
 
-        pytest.assume(res.status_code == response.get("status"))
-        if type(response.get("text")) == dict:
-            logging.info(f'接口结果:{res.json().get("msg")} VS 接口预期:{response.get("text").get("msg")}')
-            assert res.json().get("msg") == response.get("text").get("msg")
+        Utils.validate_value_assume(response, res)
+        # Utils.validate_value_assume(response.get("status"), res.status_code)
+        # if isinstance(response.get("text"), dict):
+        #     Utils.validate_value_assume(response.get("text").get("msg"), res.json().get("msg"))
+        #     if isinstance(response.get("text").get('data'), dict):
+        #         for k, v in response.get("text").get('data').items():
+        #             if k.startswith("$"):
+        #                 Utils.validate_value_assume(v, Utils.json_path(res.json(), k))
 
 
 if __name__ == "__main__":

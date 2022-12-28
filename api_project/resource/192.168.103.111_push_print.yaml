@@ -20,7 +20,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+    url: f"http://{host_port}/cta/pushpacs/pushToOtherPacs"
   response:
     status: 200
     text:
@@ -51,7 +51,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+    url: f"http://{host_port}/cta/pushpacs/pushToOtherPacs"
   response:
     status: 200
     text:
@@ -81,7 +81,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+    url: f"http://{host_port}/cta/pushpacs/pushToOtherPacs"
   response:
     status: 200
     text:
@@ -110,7 +110,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+    url: f"http://{host_port}/cta/pushpacs/pushToOtherPacs"
   response:
     status: 200
     text:
@@ -140,7 +140,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+    url: f"http://{host_port}/cta/pushpacs/pushToOtherPacs"
   response:
     status: 200
     text:
@@ -169,7 +169,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+    url: f"http://{host_port}/cta/pushpacs/pushToOtherPacs"
   response:
     status: 200
     text:
@@ -199,7 +199,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+    url: f"http://{host_port}/cta/pushpacs/pushToOtherPacs"
   response:
     status: 200
     text:
@@ -229,7 +229,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+    url: f"http://{host_port}/cta/pushpacs/pushToOtherPacs"
   response:
     status: 200
     text:
@@ -259,7 +259,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+    url: f"http://{host_port}/cta/pushpacs/pushToOtherPacs"
   response:
     status: 200
     text:
@@ -281,7 +281,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+    url: f"http://{host_port}/cta/pushpacs/pushToOtherPacs"
   response:
     status: 200
     text:
@@ -303,7 +303,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+    url: f"http://{host_port}/cta/pushpacs/pushToOtherPacs"
   response:
     status: 200
     text:
@@ -324,7 +324,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/pushpacs/pushToOtherPacs
+    url: f"http://{host_port}/cta/pushpacs/pushToOtherPacs"
   response:
     status: 200
     text:
@@ -346,7 +346,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getPathByType
+    url: f"http://{host_port}/cta/image/getPathByType"
   response:
     status: 200
     text:
@@ -368,7 +368,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getPathByType
+    url: f"http://{host_port}/cta/image/getPathByType"
   response:
     status: 200
     text:
@@ -389,7 +389,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getPathByType
+    url: f"http://{host_port}/cta/image/getPathByType"
   response:
     status: 200
     text:
@@ -410,7 +410,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getPathByType
+    url: f"http://{host_port}/cta/image/getPathByType"
   response:
     status: 200
     text:
@@ -431,7 +431,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getPathByType
+    url: f"http://{host_port}/cta/image/getPathByType"
   response:
     status: 200
     text:
@@ -454,7 +454,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/filmCornerByPath
+    url: f"http://{host_port}/cta/image/filmCornerByPath"
   response:
     status: 200
     text:
@@ -478,7 +478,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/filmCornerByPath
+    url: f"http://{host_port}/cta/image/filmCornerByPath"
   response:
     status: 200
     text:
@@ -503,7 +503,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/filmCornerByPath
+    url: f"http://{host_port}/cta/image/filmCornerByPath"
   response:
     status: 200
     text:

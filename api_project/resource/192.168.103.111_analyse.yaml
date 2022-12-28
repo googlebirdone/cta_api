@@ -5,7 +5,7 @@
       Content-Type: application/json;charset=UTF-8
     method: GET
     params: bodyPart=coronary&patientId=1470600&seriesUid=1.2.392.200036.9116.2.1220870435.1646620421.11.1010700004.1&studyUid=1.2.410.200010.86.101.202203070340&toMode=101&_v=5.6.0
-    url: http://192.168.103.11:888/pacs/v2/dicom/getUserIp
+    url: f"http://{host_port}/pacs/v2/dicom/getUserIp"
   response:
     status: 200
     text:
@@ -22,7 +22,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/ris/v2/viewer/getViewerSettings
+    url: f"http://{host_port}/ris/v2/viewer/getViewerSettings"
   response:
     status: 200
     text:
@@ -54,7 +54,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/isNeedTips
+    url: f"http://{host_port}/cta/image/isNeedTips"
   response:
     status: 200
     text:
@@ -74,7 +74,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/isNeedTips
+    url: f"http://{host_port}/cta/image/isNeedTips"
   response:
     status: 200
     text:
@@ -93,7 +93,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/isNeedTips
+    url: f"http://{host_port}/cta/image/isNeedTips"
   response:
     status: 200
     text:
@@ -112,7 +112,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/isNeedTips
+    url: f"http://{host_port}/cta/image/isNeedTips"
   response:
     status: 200
     text:
@@ -131,7 +131,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/isNeedTips
+    url: f"http://{host_port}/cta/image/isNeedTips"
   response:
     status: 200
     text:
@@ -151,7 +151,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/isNeedTips
+    url: f"http://{host_port}/cta/image/isNeedTips"
   response:
     status: 200
     text:
@@ -172,7 +172,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/diagnosisInfo
+    url: f"http://{host_port}/cta/image/diagnosisInfo"
   response:
     status: 200
     text:
@@ -235,7 +235,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/diagnosisInfo
+    url: f"http://{host_port}/cta/image/diagnosisInfo"
   response:
     status: 200
     text:
@@ -294,7 +294,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/diagnosisInfo
+    url: f"http://{host_port}/cta/image/diagnosisInfo"
   response:
     status: 200
     text:
@@ -314,7 +314,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/diagnosisInfo
+    url: f"http://{host_port}/cta/image/diagnosisInfo"
   response:
     status: 200
     text:
@@ -334,7 +334,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/diagnosisInfo
+    url: f"http://{host_port}/cta/image/diagnosisInfo"
   response:
     status: 200
     text:
@@ -354,7 +354,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/diagnosisInfo
+    url: f"http://{host_port}/cta/image/diagnosisInfo"
   response:
     status: 200
     text:
@@ -374,7 +374,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getAiResult
+    url: f"http://{host_port}/cta/image/getAiResult"
   response:
     status: 200
     text:
@@ -394,7 +394,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getAiResult
+    url: f"http://{host_port}/cta/image/getAiResult"
   response:
     status: 200
     text:
@@ -413,7 +413,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getAiResult
+    url: f"http://{host_port}/cta/image/getAiResult"
   response:
     status: 200
     text:
@@ -432,7 +432,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getAiResult
+    url: f"http://{host_port}/cta/image/getAiResult"
   response:
     status: 200
     text:
@@ -451,7 +451,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getAiResult
+    url: f"http://{host_port}/cta/image/getAiResult"
   response:
     status: 200
     text:
@@ -471,7 +471,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getSeriesList
+    url: f"http://{host_port}/cta/image/getSeriesList"
   response:
     status: 200
     text:
@@ -506,7 +506,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getSeriesList
+    url: f"http://{host_port}/cta/image/getSeriesList"
   response:
     status: 200
     text:
@@ -525,7 +525,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getSeriesList
+    url: f"http://{host_port}/cta/image/getSeriesList"
   response:
     status: 200
     text:
@@ -544,7 +544,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getSeriesList
+    url: f"http://{host_port}/cta/image/getSeriesList"
   response:
     status: 200
     text:
@@ -563,7 +563,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getSeriesList
+    url: f"http://{host_port}/cta/image/getSeriesList"
   response:
     status: 200
     text:
@@ -598,7 +598,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/mask/getVesselMask
+    url: f"http://{host_port}/cta/mask/getVesselMask"
   response:
     status: 200
     text:
@@ -618,7 +618,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/mask/getVesselMask
+    url: f"http://{host_port}/cta/mask/getVesselMask"
   response:
     status: 200
     text:
@@ -637,7 +637,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/mask/getVesselMask
+    url: f"http://{host_port}/cta/mask/getVesselMask"
   response:
     status: 200
     text:
@@ -656,7 +656,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/mask/getVesselMask
+    url: f"http://{host_port}/cta/mask/getVesselMask"
   response:
     status: 200
     text:
@@ -675,7 +675,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/mask/getVesselMask
+    url: f"http://{host_port}/cta/mask/getVesselMask"
   response:
     status: 200
     text:
@@ -696,7 +696,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/diagnosis/info
+    url: f"http://{host_port}/cta/diagnosis/info"
   response:
     status: 200
     text:
@@ -717,7 +717,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/diagnosis/info
+    url: f"http://{host_port}/cta/diagnosis/info"
   response:
     status: 200
     text:
@@ -737,7 +737,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/diagnosis/info
+    url: f"http://{host_port}/cta/diagnosis/info"
   response:
     status: 200
     text:
@@ -757,7 +757,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/diagnosis/info
+    url: f"http://{host_port}/cta/diagnosis/info"
   response:
     status: 200
     text:
@@ -777,7 +777,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/diagnosis/info
+    url: f"http://{host_port}/cta/diagnosis/info"
   response:
     status: 200
     text:
@@ -798,7 +798,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getReport
+    url: f"http://{host_port}/cta/image/getReport"
   response:
     status: 200
     text:
@@ -824,7 +824,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getReport
+    url: f"http://{host_port}/cta/image/getReport"
   response:
     status: 200
     text:
@@ -844,7 +844,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getReport
+    url: f"http://{host_port}/cta/image/getReport"
   response:
     status: 200
     text:
@@ -864,7 +864,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getReport
+    url: f"http://{host_port}/cta/image/getReport"
   response:
     status: 200
     text:
@@ -884,7 +884,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getReport
+    url: f"http://{host_port}/cta/image/getReport"
   response:
     status: 200
     text:
@@ -906,7 +906,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getCenterline
+    url: f"http://{host_port}/cta/image/getCenterline"
   response:
     status: 200
     text:
@@ -928,7 +928,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getCenterline
+    url: f"http://{host_port}/cta/image/getCenterline"
   response:
     status: 200
     text:
@@ -951,7 +951,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getCenterline
+    url: f"http://{host_port}/cta/image/getCenterline"
   response:
     status: 200
     text:
@@ -972,7 +972,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getCenterline
+    url: f"http://{host_port}/cta/image/getCenterline"
   response:
     status: 200
     text:
@@ -993,7 +993,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getCenterline
+    url: f"http://{host_port}/cta/image/getCenterline"
   response:
     status: 200
     text:
@@ -1013,7 +1013,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getCenterline
+    url: f"http://{host_port}/cta/image/getCenterline"
   response:
     status: 200
     text:
@@ -1035,7 +1035,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getCenterline
+    url: f"http://{host_port}/cta/image/getCenterline"
   response:
     status: 200
     text:
@@ -1056,7 +1056,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getCenterline
+    url: f"http://{host_port}/cta/image/getCenterline"
   response:
     status: 200
     text:
@@ -1077,7 +1077,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getCenterline
+    url: f"http://{host_port}/cta/image/getCenterline"
   response:
     status: 200
     text:
@@ -1099,7 +1099,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/getCenterline
+    url: f"http://{host_port}/cta/image/getCenterline"
   response:
     status: 200
     text:
@@ -1120,7 +1120,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/oneImageTaskInfo
+    url: f"http://{host_port}/cta/image/oneImageTaskInfo"
   response:
     status: 200
     text:
@@ -1141,7 +1141,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/oneImageTaskInfo
+    url: f"http://{host_port}/cta/image/oneImageTaskInfo"
   response:
     status: 200
     text:
@@ -1161,7 +1161,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/oneImageTaskInfo
+    url: f"http://{host_port}/cta/image/oneImageTaskInfo"
   response:
     status: 200
     text:
@@ -1181,7 +1181,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/oneImageTaskInfo
+    url: f"http://{host_port}/cta/image/oneImageTaskInfo"
   response:
     status: 200
     text:
@@ -1201,7 +1201,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/oneImageTaskInfo
+    url: f"http://{host_port}/cta/image/oneImageTaskInfo"
   response:
     status: 200
     text:
@@ -1225,7 +1225,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+    url: f"http://{host_port}/pacs/v2/dicom/updateAIResultJson"
   response:
     status: 200
     text:
@@ -1249,7 +1249,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+    url: f"http://{host_port}/pacs/v2/dicom/updateAIResultJson"
   response:
     status: 200
     text:
@@ -1273,7 +1273,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+    url: f"http://{host_port}/pacs/v2/dicom/updateAIResultJson"
   response:
     status: 200
     text:
@@ -1296,7 +1296,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+    url: f"http://{host_port}/pacs/v2/dicom/updateAIResultJson"
   response:
     status: 200
     text:
@@ -1321,7 +1321,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+    url: f"http://{host_port}/pacs/v2/dicom/updateAIResultJson"
   response:
     status: 200
     text:
@@ -1345,7 +1345,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+    url: f"http://{host_port}/pacs/v2/dicom/updateAIResultJson"
   response:
     status: 200
     text:
@@ -1368,7 +1368,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+    url: f"http://{host_port}/pacs/v2/dicom/updateAIResultJson"
   response:
     status: 200
     text:
@@ -1391,7 +1391,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+    url: f"http://{host_port}/pacs/v2/dicom/updateAIResultJson"
   response:
     status: 200
     text:
@@ -1414,7 +1414,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/pacs/v2/dicom/updateAIResultJson
+    url: f"http://{host_port}/pacs/v2/dicom/updateAIResultJson"
   response:
     status: 200
     text:
@@ -1422,6 +1422,31 @@
       encrypt: 0
       msg: lack of parameters
       ret: -10000
+- name: 更新诊断结果_心脏起源无冠窦
+  request:
+    body:
+      bodyPart: coronary
+      fromMode: '9'
+      operationData:
+        right_originate: non_sinus
+      operationNo: 7
+      patientId: '42613078'
+      seriesUid: 1.2.840.1.99.1.47.2.1527753185422
+      studyUid: 1.2.840.1.99.1.47.1.1527753178410.260
+      toMode: '101'
+      _v: 5.6.1
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/pacs/v2/dicom/updateAIResultJson"
+  response:
+    status: 200
+    text:
+      data: null
+      encrypt: 0
+      msg: 'ok'
+      ret: 0
 - name: delete
   request:
     body:
@@ -1467,7 +1492,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/diagnosis/delete
+    url: f"http://{host_port}/cta/diagnosis/delete"
   response:
     status: 200
     text:
@@ -1491,7 +1516,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/diagnosis/delete
+    url: f"http://{host_port}/cta/diagnosis/delete"
   response:
     status: 200
     text:
@@ -1544,7 +1569,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/diagnosis/delete
+    url: f"http://{host_port}/cta/diagnosis/delete"
   response:
     status: 200
     text:
@@ -1597,7 +1622,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/diagnosis/delete
+    url: f"http://{host_port}/cta/diagnosis/delete"
   response:
     status: 200
     text:
@@ -1650,7 +1675,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/diagnosis/delete
+    url: f"http://{host_port}/cta/diagnosis/delete"
   response:
     status: 200
     text:
@@ -1702,7 +1727,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/diagnosis/delete
+    url: f"http://{host_port}/cta/diagnosis/delete"
   response:
     status: 200
     text:
@@ -1754,7 +1779,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/diagnosis/delete
+    url: f"http://{host_port}/cta/diagnosis/delete"
   response:
     status: 200
     text:
@@ -1806,7 +1831,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/diagnosis/delete
+    url: f"http://{host_port}/cta/diagnosis/delete"
   response:
     status: 200
     text:
@@ -1827,7 +1852,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/willisItems
+    url: f"http://{host_port}/cta/image/willisItems"
   response:
     status: 200
     text:
@@ -1895,7 +1920,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/willisItems
+    url: f"http://{host_port}/cta/image/willisItems"
   response:
     status: 200
     text:
@@ -1963,7 +1988,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/willisItems
+    url: f"http://{host_port}/cta/image/willisItems"
   response:
     status: 200
     text:
@@ -1983,7 +2008,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/willisItems
+    url: f"http://{host_port}/cta/image/willisItems"
   response:
     status: 200
     text:
@@ -2003,7 +2028,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/willisItems
+    url: f"http://{host_port}/cta/image/willisItems"
   response:
     status: 200
     text:
@@ -2023,7 +2048,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/willisItems
+    url: f"http://{host_port}/cta/image/willisItems"
   response:
     status: 200
     text:
@@ -2047,7 +2072,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/saveWillis
+    url: f"http://{host_port}/cta/image/saveWillis"
   response:
     status: 200
     text:
@@ -2071,7 +2096,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/saveWillis
+    url: f"http://{host_port}/cta/image/saveWillis"
   response:
     status: 200
     text:
@@ -2095,7 +2120,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/saveWillis
+    url: f"http://{host_port}/cta/image/saveWillis"
   response:
     status: 200
     text:
@@ -2118,7 +2143,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/saveWillis
+    url: f"http://{host_port}/cta/image/saveWillis"
   response:
     status: 200
     text:
@@ -2141,7 +2166,7 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/saveWillis
+    url: f"http://{host_port}/cta/image/saveWillis"
   response:
     status: 200
     text:
@@ -2165,11 +2190,231 @@
       Content-Type: application/json;charset=UTF-8
     method: POST
     params: ''
-    url: http://192.168.103.11:888/cta/image/saveWillis
+    url: f"http://{host_port}/cta/image/saveWillis"
   response:
     status: 200
     text:
       ret: -10001
       msg: seriesUid不能为空
       data: null
+      encrypt: 0
+- name: structure_report
+  request:
+    body:
+      bodyPart: coronary
+      fromMode: '113'
+      patientId: '42613078'
+      seriesUid: 1.2.840.1.99.1.47.2.1527753883564
+      studyUid: 1.2.840.1.99.1.47.1.1527753178410.260
+      toMode: '101'
+      _v: 5.6.1
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/cta/structure/getReport"
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: structure_report_不匹配的三元组
+  request:
+    body:
+      bodyPart: coronary
+      fromMode: '113'
+      patientId: '4261307822'
+      seriesUid: 1.2.840.1.99.1.47.2.1527753883564
+      studyUid: 1.2.840.1.99.1.47.1.1527753178410.260
+      toMode: '101'
+      _v: 5.6.1
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/cta/structure/getReport"
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: structure_report_三元组有空
+  request:
+    body:
+      bodyPart: coronary
+      fromMode: '113'
+      patientId: null
+      seriesUid: 1.2.840.1.99.1.47.2.1527753883564
+      studyUid: 1.2.840.1.99.1.47.1.1527753178410.260
+      toMode: '101'
+      _v: 5.6.100
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/cta/structure/getReport"
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: structure_report_缺少患者id
+  request:
+    body:
+      bodyPart: coronary
+      fromMode: '113'
+      seriesUid: 1.2.840.1.99.1.47.2.1527753883564
+      studyUid: 1.2.840.1.99.1.47.1.1527753178410.260
+      toMode: '101'
+      _v: 5.6.100
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/cta/structure/getReport"
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: structure_report_缺少患者检查id
+  request:
+    body:
+      bodyPart: coronary
+      fromMode: '113'
+      patientId: '42613078'
+      seriesUid: 1.2.840.1.99.1.47.2.1527753883564
+      toMode: '101'
+      _v: 5.6.100
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/cta/structure/getReport"
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: structure_report_缺少患者序列id
+  request:
+    body:
+      bodyPart: coronary
+      fromMode: '113'
+      patientId: '42613078'
+      studyUid: 1.2.840.1.99.1.47.1.1527753178410.260
+      toMode: '101'
+      _v: 5.6.1
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/cta/structure/getReport"
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: 狭窄编辑_狭窄曲线
+  request:
+    body:
+      bodyPart: coronary
+      filePath: /data1/inputdata/42613078/1921F55E/61645EA6
+      fromMode: '9'
+      patientId: '42613078'
+      seriesUid: 1.2.840.1.99.1.47.2.1527753185422
+      studyUid: 1.2.840.1.99.1.47.1.1527753178410.260
+      toMode: '101'
+      _v: 5.6.1
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/cta/narrow/getNarrowContourJson"
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: null
+      encrypt: 0
+- name: 狭窄编辑_狭窄曲线_不存在的文件路径
+  request:
+    body:
+      bodyPart: coronary
+      filePath: /data1/inputdata/1251589/1921F55E/61645EA6
+      fromMode: '9'
+      patientId: '42613078'
+      seriesUid: 1.2.840.1.99.1.47.2.1527753185422
+      studyUid: 1.2.840.1.99.1.47.1.1527753178410.260
+      toMode: '101'
+      _v: 5.6.1
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/cta/narrow/getNarrowContourJson"
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: 'narrow_contour.txt is not exists'
+      encrypt: 0
+- name: 狭窄编辑_狭窄曲线_文件路径为空
+  request:
+    body:
+      bodyPart: coronary
+      filePath: null
+      fromMode: '9'
+      patientId: '42613078'
+      seriesUid: 1.2.840.1.99.1.47.2.1527753185422
+      studyUid: 1.2.840.1.99.1.47.1.1527753178410.260
+      toMode: '101'
+      _v: 5.6.1
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/cta/narrow/getNarrowContourJson"
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: 'narrow_contour.txt is not exists'
+      encrypt: 0
+- name: 狭窄编辑_狭窄曲线_缺少文件路径
+  request:
+    body:
+      bodyPart: coronary
+      fromMode: '9'
+      patientId: '42613078'
+      seriesUid: 1.2.840.1.99.1.47.2.1527753185422
+      studyUid: 1.2.840.1.99.1.47.1.1527753178410.260
+      toMode: '101'
+      _v: 5.6.1
+    headers:
+      Content-Type: application/json;charset=UTF-8
+    method: POST
+    params: ''
+    url: f"http://{host_port}/cta/narrow/getNarrowContourJson"
+  response:
+    status: 200
+    text:
+      ret: 0
+      msg: ok
+      data: 'narrow_contour.txt is not exists'
       encrypt: 0
